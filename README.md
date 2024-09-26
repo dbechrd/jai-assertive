@@ -38,3 +38,32 @@ test_server_receive_packet :: () {
     assert_equal(an_array, another_array);
 }
 ```
+
+## Example Output
+
+```
+--- Server ---------------------------------------------------------------------
+Running tests...
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ [Test] test_server_send_packet                                               │
+└──────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ [Test] test_server_receive_packet                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+c:/Users/User/Documents/MyProject/modules/FakeModule.jai:30,5: Assertion failed: assert_equal(an_array, another_array)
+
+Element at index 3 is different:
+value    : 4
+expected : 7
+
+In arrays:
+value    [1, 2, 3, 4, 5]
+expected [1, 2, 3, 7, 5]
+
+Stack trace:
+C:/Program Files/jai/modules/Runtime_Support.jai:103: runtime_support_assertion_failed
+C:/Program Files/jai/modules/Basic/module.jai:87: assert_helper
+c:/Users/User/Documents/MyProject/modules/Assertive.jai:56: assert_equal
+c:/Users/User/Documents/MyProject/modules/FakeModule.jai:30: test
+c:/Users/User/Documents/MyProject/modules/FakeModule.jai:5: server_test
+```

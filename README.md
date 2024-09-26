@@ -3,7 +3,7 @@ A simple assert-based unit test module for Jai.
 
 ![image](https://github.com/user-attachments/assets/cd8c4312-eee2-4269-be77-e5617a05b185)
 
-## Example Usage
+## Basic Usage
 
 ```jai
 server_test :: () {

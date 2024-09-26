@@ -32,7 +32,7 @@ test_server_send_packet :: () {
 
 test_server_receive_packet :: () {
     an_array := int.[ 1, 2, 3, 4, 5 ];
-    another_array := int.[ 1, 2, 3, 4, 5 ];
+    another_array := int.[ 1, 2, 3, 7, 5 ];
 
     // arrays are special, and will print pretty details if their counts or elements don't match
     assert_equal(an_array, another_array);

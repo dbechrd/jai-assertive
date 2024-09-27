@@ -1,5 +1,5 @@
 # Assertive
-A Jai module of simple assert helpers. Useful for unit testing, or just improved assert output in general code.
+A straightforward collection of better asserts. Can be used to create unit tests, or to get more helpful assert messages in regular code.
 
 ![image](https://github.com/user-attachments/assets/cd8c4312-eee2-4269-be77-e5617a05b185)
 

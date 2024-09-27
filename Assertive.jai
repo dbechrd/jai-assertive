@@ -23,27 +23,43 @@ EOS
 }
 
 assert_true :: (value: bool, $call := #caller_code, loc := #caller_location) {
-    if value != true {
-        assert(false, "%\nValue is false.\nvalue : %", #run get_expression(call), value, loc = loc);
-    }
+    if value == true return;
+    assert(false, "%\nValue is false.\nvalue : %", #run get_expression(call), value, loc = loc);
 }
 
 assert_false :: (value: bool, $call := #caller_code, loc := #caller_location) {
-    if value != false {
-        assert(false, "%\nValue is not false.\nvalue : %", #run get_expression(call), value, loc = loc);
-    }
+    if value == false return;
+    assert(false, "%\nValue is not false.\nvalue : %", #run get_expression(call), value, loc = loc);
 }
 
 assert_null :: (value: $T, $call := #caller_code, loc := #caller_location) {
-    if value != null {
-        assert(false, "%\nValue is not null.\nvalue : %", #run get_expression(call), value, loc = loc);
-    }
+    if value == null return;
+    assert(false, "%\nValue is not null.\nvalue : %", #run get_expression(call), value, loc = loc);
 }
 
 assert_not_null :: (value: $T, $call := #caller_code, loc := #caller_location) {
-    if value == null {
-        assert(false, "%\nValue is null.", #run get_expression(call), loc = loc);
-    }
+    if value != null return;
+    assert(false, "%\nValue is null.", #run get_expression(call), loc = loc);
+}
+
+assert_less :: (left: T, right: $T, $call := #caller_code, loc := #caller_location) {
+    if left < right return;
+    assert(false, "%\nleft  : %\nright : %", #run get_expression(call), left, right, loc = loc);
+}
+
+assert_less_or_equal :: (left: T, right: $T, $call := #caller_code, loc := #caller_location) {
+    if left <= right return;
+    assert(false, "%\nleft  : %\nright : %", #run get_expression(call), left, right, loc = loc);
+}
+
+assert_greater :: (left: T, right: $T, $call := #caller_code, loc := #caller_location) {
+    if left > right return;
+    assert(false, "%\nleft  : %\nright : %", #run get_expression(call), left, right, loc = loc);
+}
+
+assert_greater_or_equal :: (left: T, right: $T, $call := #caller_code, loc := #caller_location) {
+    if left >= right return;
+    assert(false, "%\nleft  : %\nright : %", #run get_expression(call), left, right, loc = loc);
 }
 
 assert_equal :: (value: T, expected: $T, $call := #caller_code, loc := #caller_location) {

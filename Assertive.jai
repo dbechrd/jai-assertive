@@ -62,7 +62,7 @@ assert_greater_or_equal :: (left: T, right: $T, $call := #caller_code, loc := #c
     assert(false, "%\nleft  : %\nright : %", #run get_expression(call), left, right, loc = loc);
 }
 
-assert_equal :: (value: T, expected: $T, $call := #caller_code, loc := #caller_location) {
+assert_equal :: (value: $T, expected: T, $call := #caller_code, loc := #caller_location) {
     #if type_info(T).type == .ARRAY {
         if value.count != expected.count {
             assert(false, "%\nArray length does not match.\nvalue    : %\nexpected : %", #run get_expression(call), value.count, expected.count, loc = loc);

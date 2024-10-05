@@ -29,7 +29,7 @@ assert_true :: (value: bool, $call := #caller_code, loc := #caller_location) {
 
 assert_false :: (value: bool, $call := #caller_code, loc := #caller_location) {
     if value == false return;
-    assert(false, "%\nValue is not false.", #run get_expression(call), value, loc = loc);
+    assert(false, "%\nValue is true.", #run get_expression(call), value, loc = loc);
 }
 
 assert_null :: (value: $T, $call := #caller_code, loc := #caller_location) {
